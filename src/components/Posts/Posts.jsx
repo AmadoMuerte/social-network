@@ -1,9 +1,9 @@
 import React from 'react';
 
 import classes from './Posts.module.css';
-import PostForm from "../PostForm/PostForm";
+import PostForm from "./PostForm/PostForm";
 import ButtonSend from "../buttons/ButtonSend/ButtonSend";
-import Post from "../Post/Post";
+import Post from "./Post/Post";
 
 function Posts() {
     return (
