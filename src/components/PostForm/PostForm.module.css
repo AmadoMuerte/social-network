@@ -1,0 +1,11 @@
+.PostForm {
+    display: block;
+    resize: none;
+    min-width: 700px;
+    min-height: 90px;
+    font-size: 20px;
+    background-color: #F5F5F5;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,19 @@
+.posts {}
+.posts__title {
+    margin-left: 30px;
+    font-size: 30px;
+    line-height: 20px;
+    color: #B0A3D9;
+    text-shadow: 2px 2px 4px #dbdada;
+}
+.posts__form {
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 30px;
+}
+.list {
+    padding-left: 30px;
+}
