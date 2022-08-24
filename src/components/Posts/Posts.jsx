@@ -14,10 +14,9 @@ function Posts() {
                 <ButtonSend />
             </div>
             <div className={classes.list}>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                <Post description={'hi, whats up?'} />
+                <Post description={'Whats your name man?'}/>
+
             </div>
 
         </div>

@@ -8,7 +8,12 @@
     margin: 20px 0px;
     border-radius: 5px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.post__inner {
+    display: flex;
 }
 
 .post__avatar {
