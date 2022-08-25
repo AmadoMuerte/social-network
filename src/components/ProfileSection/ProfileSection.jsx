@@ -1,17 +1,15 @@
 import React from 'react';
 
-import classes from './Main.module.css';
-
 import Posts from "../Posts/Posts";
 import Profile from "../Profile/Profile";
 
-function Main() {
+function ProfileSection() {
     return (
-        <main className={classes.content}>
+        <main>
             <Profile />
             <Posts />
         </main>
     );
 }
 
-export default Main;
+export default ProfileSection;
