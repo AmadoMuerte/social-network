@@ -14,9 +14,8 @@ function Posts() {
                 <ButtonSend />
             </div>
             <div className={classes.list}>
-                <Post description={'hi, whats up?'} />
-                <Post description={'Whats your name man?'}/>
-
+                <Post description={'hi, whats up?'} likesCount={25}/>
+                <Post description={'Whats your name man?'} likesCount={33}/>
             </div>
 
         </div>
