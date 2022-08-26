@@ -1,14 +1,11 @@
 .ButtonSend {
-    margin-left: 650px;
-    max-width: 100px;
-    margin-top: 8px;
-    font-size: 15px;
-    padding: 5px 10px;
-    background-color: #B0A3D9;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: 700;
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 8px 80px;
+    border: 1px solid rgba(128, 128, 128, 0.27);
+    border-radius: 15px;
+    background-color: white;
+    color: #5d5d5d;
 }
 
 .ButtonSend:hover {

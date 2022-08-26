@@ -1,15 +1,15 @@
 .post {
-    width: 685px;
-    font-size: 20px;
-    background-color: #E3E3E3;
-    box-shadow: 1px 1px 3px #c0baba;
+    width: 900px;
+    font-size: 18px;
+    background-color: white;
     color: #5d5d5d;
     padding: 5px 10px;
     margin: 20px 0px;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.27);
 }
 
 .post__inner {

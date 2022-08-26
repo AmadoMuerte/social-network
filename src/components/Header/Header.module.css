@@ -1,8 +1,8 @@
 .header {
     z-index: 1;
     grid-area: h;
-    background-color: #B0A3D9;
-    box-shadow: 1px 1px 4px #878787;
+    background-color: white;
+    box-shadow: 1px 1px 6px #d5d0d0;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -11,5 +11,5 @@
 .logo {
     font-size: 30px;
     font-family: 'Roboto Condensed', sans-serif;
-    color: #DBDBDB;
+    color: #44444a;
 }
