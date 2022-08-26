@@ -1,1 +1,23 @@
-.dialogs {}
+.dialogs {
+    display: flex;
+    align-items: center;
+}
+.dialogsItems {
+    border-radius: 8px 0 0 5px;
+    padding: 10px 25px 10px 10px;
+    font-size: 18px;
+    background-color: rgb(227 227 227);
+}
+.dialogsItems__item {}
+
+.dialogsItems .active {
+    transition: 0.2s;
+    font-size: 21px;
+    color: #9889d1;
+}
+
+.messages {
+    padding: 10px 10px;
+    font-size: 18px;
+}
+.messages__item {}

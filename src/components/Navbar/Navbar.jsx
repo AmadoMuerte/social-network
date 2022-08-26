@@ -1,17 +1,48 @@
 import React from 'react';
 
 import classes from './Navbar.module.css';
-import ProfileSection from "../ProfileSection/ProfileSection";
+import {NavLink} from "react-router-dom";
 
 function Navbar() {
+
+
+    const isActive = (e) => {
+       return e.isActive ? classes.active : classes.nav__item;
+    }
+
     return (
         <ul className={classes.nav}>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/dialogs">Messages</a></li>
-            <li><a href="/news">News</a></li>
-            <li><a href="/music">Music</a></li>
+            <li>
+                <NavLink
+                    to="/profile"
+                    className={isActive}
+                >Profile</NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/dialogs"
+                    className={isActive}
+                >Messages</NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/news"
+                    className={isActive}
+                >News</NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/music"
+                    className={isActive}
+                >Music</NavLink>
+            </li>
             <br/>
-            <li><a href="/settings">Settings</a></li>
+            <li>
+                <NavLink
+                    to="/settings"
+                    className={isActive}
+                >Settings</NavLink>
+            </li>
         </ul>
     );
 }
