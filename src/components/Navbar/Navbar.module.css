@@ -9,6 +9,10 @@
     max-height: 90vh;
 }
 
+.nav a {
+    color: inherit;
+    text-decoration: none;
+}
 .nav li {
     font-size: 20px;
     line-height: 30px;
