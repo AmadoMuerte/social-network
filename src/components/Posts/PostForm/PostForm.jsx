@@ -1,13 +1,17 @@
 import React from 'react';
 
 import classes from './PostForm.module.css';
+import ButtonSend from "../../buttons/ButtonSend/ButtonSend";
 
 function PostForm() {
     return (
-        <textarea
-            className={classes.PostForm}
-            placeholder={'you news...'}
-        />
+        <div>
+            <textarea
+                className={classes.PostForm}
+                placeholder={'you news...'}
+            />
+            <ButtonSend message={'Send message'}/>
+        </div>
     );
 }
 

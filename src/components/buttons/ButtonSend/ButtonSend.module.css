@@ -1,4 +1,5 @@
 .ButtonSend {
+    width: 100%;
     margin-top: 10px;
     font-size: 18px;
     padding: 8px 80px;
@@ -6,8 +7,11 @@
     border-radius: 15px;
     background-color: white;
     color: #5d5d5d;
+    transition: 0.2s;
 }
 
 .ButtonSend:hover {
-    background-color: #ab697d;
+    transition: 0.2s;
+    color: white;
+    background-color: #9889d1;
 }

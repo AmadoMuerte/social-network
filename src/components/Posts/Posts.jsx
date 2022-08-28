@@ -8,17 +8,15 @@ import Post from "./Post/Post";
 function Posts() {
     return (
         <div className={classes.posts}>
-
-            <div className={classes.list}>
-                <Post description={'hi, whats up?'} likesCount={25}/>
-                <Post description={'Whats your name man?'} likesCount={33}/>
-                <Post description={'Whats your name man?'} likesCount={33}/>
-                <Post description={'Whats your name man?'} likesCount={33}/>
-            </div>
             <div className={classes.posts__form}>
                 <PostForm />
-                <ButtonSend message={'Send message'}/>
             </div>
+            <div className={classes.list}>
+                <Post description={'О, это же моя стена, нихрена себе, а что тут писать то?'} likesCount={33}/>
+                <Post description={'надеюсь сюда кто нибудь заходит...'} likesCount={33}/>
+                <Post description={'надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит...'} likesCount={33}/>
+            </div>
+
         </div>
     );
 }

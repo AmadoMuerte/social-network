@@ -1,6 +1,8 @@
 .posts {
     background: white;
     border-radius: 5px;
+    padding: 20px 0;
+    margin-bottom: 30px;
 }
 
 .posts__form {
@@ -8,8 +10,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.27);
+    margin-bottom: 10px;
+
 }
 .list {
     display: flex;
