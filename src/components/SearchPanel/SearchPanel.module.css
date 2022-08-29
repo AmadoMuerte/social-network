@@ -1,0 +1,23 @@
+.search {
+    background-color: rgba(237, 236, 236, 0.55);;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border: 1px solid rgba(128, 128, 128, 0.27);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.search img {
+    padding: 8px 5px 8px 0 ;
+    width: 15px;
+
+}
+
+.search input {
+    font-size: 16px;
+    width: 100%;
+    background: none;
+    border: none;
+    color: rgb(31 41 51);
+}
