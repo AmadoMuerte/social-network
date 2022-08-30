@@ -24,4 +24,9 @@ ul li {
   outline-offset: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
 
