@@ -8,12 +8,33 @@ import btnImage from '../../paper-plane-solid.svg';
 import Message from "./Message/Message";
 
 function Dialogs() {
+
+    let dialogsData = [
+        {id: 1, name: 'Boris Smirnov'},
+        {id: 2, name: 'Boris s'},
+        {id: 3, name: 'Boris Smirnov'},
+        {id: 4, name: 'Boris ddd'},
+    ]
+
+    let dialogsElements = dialogsData.map(dialog => {
+       return <DialogsItem id={dialog.id} name={dialog.name} key={dialog.id}/>
+    });
+
+    let messagesData = [
+        {message: 'hello', id: 0},
+        {message: 'how are you?', id: 1},
+        {message: 'goodbye', id: 2},
+    ]
+
+    let messagesElements = messagesData.map(message => {
+        return <Message  message={message.message} key={message.id}/>
+    })
+
     return (
         <div className={classes.dialogs}>
             <div className={classes.items}>
                 <SearchPanel />
-                <DialogsItem name={'Boris Smirnov'} message={'fuck you!'} id={1}/>
-                <DialogsItem name={'Andrey Svit'} message={'Hello'} id={2}/>
+                {dialogsElements}
             </div>
             <div className={classes.messages}>
                 <div className={classes.messages__header}>
@@ -23,8 +44,7 @@ function Dialogs() {
                     <h3 className={classes.messages__name}>Lester Barry</h3>
                 </div>
                 <div className={classes.messages__content}>
-                    <Message  message={'hello'}/>
-                    <Message  message={'hello'}/>
+                    {messagesElements}
                 </div>
                 <div className={classes.messages__footer}>
                     <input className={classes.messages__input} type="text" placeholder={'Type a message'}/>

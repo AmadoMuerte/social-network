@@ -2,19 +2,31 @@ import React from 'react';
 
 import classes from './Posts.module.css';
 import PostForm from "./PostForm/PostForm";
-import ButtonSend from "../buttons/ButtonSend/ButtonSend";
 import Post from "./Post/Post";
 
 function Posts() {
+
+    let postsData = [
+        {description: 'hello', likesCount: 25, id: 0},
+        {description: 'надеюсь сюда кто нибудь заходит...', likesCount: 99, id: 1},
+        {description: 'О, это же моя стена,', likesCount: 38, id: 2},
+    ]
+
+    let postsElements = postsData.map(post => {
+        return (
+            <Post description={post.description}
+                  likesCount={post.likesCount}
+                  key={post.id}
+            />)
+    });
+
     return (
         <div className={classes.posts}>
             <div className={classes.posts__form}>
                 <PostForm />
             </div>
             <div className={classes.list}>
-                <Post description={'О, это же моя стена, нихрена себе, а что тут писать то?'} likesCount={33}/>
-                <Post description={'надеюсь сюда кто нибудь заходит...'} likesCount={33}/>
-                <Post description={'надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит... надеюсь сюда кто нибудь заходит...'} likesCount={33}/>
+                {postsElements}
             </div>
 
         </div>
