@@ -7,24 +7,11 @@ import SearchPanel from "../SearchPanel/SearchPanel";
 import btnImage from '../../paper-plane-solid.svg';
 import Message from "./Message/Message";
 
-function Dialogs() {
-
-    let dialogsData = [
-        {id: 1, name: 'Boris Smirnov'},
-        {id: 2, name: 'Boris s'},
-        {id: 3, name: 'Boris Smirnov'},
-        {id: 4, name: 'Boris ddd'},
-    ]
+function Dialogs({dialogsData, messagesData}) {
 
     let dialogsElements = dialogsData.map(dialog => {
-       return <DialogsItem id={dialog.id} name={dialog.name} key={dialog.id}/>
+       return <DialogsItem id={dialog.id} name={dialog.name} key={dialog.id} />
     });
-
-    let messagesData = [
-        {message: 'hello', id: 0},
-        {message: 'how are you?', id: 1},
-        {message: 'goodbye', id: 2},
-    ]
 
     let messagesElements = messagesData.map(message => {
         return <Message  message={message.message} key={message.id}/>

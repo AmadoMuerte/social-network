@@ -2,6 +2,18 @@
     display: flex;
     align-items: center;
     margin: 10px 0;
+    padding-left: 5px;
+
+}
+
+.itemActive {
+    padding-left: 5px;
+    transition: .5s;
+    display: flex;
+    background-color: #9889d1;
+    border-radius: 10px;
+    color: white;
+
 }
 
 .image {

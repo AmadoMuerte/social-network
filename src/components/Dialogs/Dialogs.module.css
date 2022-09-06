@@ -72,6 +72,8 @@
     padding: 0 20px;
     font-size: 16px;
     margin-right: 20px;
+    background-color: white;
+    color: black;
 }
 
 .messages__btn {
@@ -79,6 +81,8 @@
     font-size: 16px;
     border-radius: 20px;
     border: 1px solid rgba(128, 128, 128, 0.27);
+    background-color: white;
+    cursor: pointer;
 }
 
 .messages__btn img {
