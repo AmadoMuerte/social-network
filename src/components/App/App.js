@@ -3,15 +3,19 @@ import './App.css';
 
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
-import ProfileSection from "./components/ProfileSection/ProfileSection";
-import Dialogs from "./components/Dialogs/Dialogs";
-import News from "./components/News/News";
-import Music from "./components/Music/Music";
-import Settings from "./components/Settings/Settings";
+import Header from "../Header/Header";
+import Navbar from "../Navbar/Navbar";
+import ProfileSection from "../ProfileSection/ProfileSection";
+import Dialogs from "../Dialogs/Dialogs";
+import News from "../News/News";
+import Music from "../Music/Music";
+import Settings from "../Settings/Settings";
+import Friends from "../Friends/Friends";
 
-function App({postsData, messagesData, dialogsData}) {
+function App({state}) {
+
+    let {profilePage, dialogPage, friends} = state
+
   return (
     <BrowserRouter>
         <div className='app-wrapper'>
@@ -21,11 +25,19 @@ function App({postsData, messagesData, dialogsData}) {
                 <Routes>
                     <Route
                         path='/profile'
-                        element={<ProfileSection postsData={postsData}/>}
+                        element={<ProfileSection postsData={profilePage.postsData}/>}
                     />
                     <Route
                         path='/dialogs/*'
-                        element={<Dialogs messagesData={messagesData} dialogsData={dialogsData}/>}
+                        element={
+                            <Dialogs messagesData={dialogPage.messagesData}
+                                     dialogsData={dialogPage.dialogsData}
+                            />
+                        }
+                    />
+                    <Route
+                        path='/friends'
+                        element={<Friends friends={friends}/>}
                     />
                     <Route
                         path='/news'

@@ -1,0 +1,8 @@
+.items {
+    padding: 20px;
+    width: 20%;
+    border-radius: 5px;
+    background: rgb(255 255 255);
+    height: 600px;
+    overflow: auto;
+}

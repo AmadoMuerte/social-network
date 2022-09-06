@@ -1,0 +1,30 @@
+.friend {
+    display: flex;
+    align-items: center;
+    width: 46%;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: rgb(255 255 255);
+    line-height: 1.31;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.friend:hover {
+    background-color: #d5d0d0;
+    color: white;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.avatar img {
+    width: 100%;
+}
+.name {
+    font-size: 18px;
+}

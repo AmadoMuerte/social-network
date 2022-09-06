@@ -26,6 +26,12 @@ function Navbar() {
             </li>
             <li>
                 <NavLink
+                    to="/friends"
+                    className={isActive}
+                >Friends</NavLink>
+            </li>
+            <li>
+                <NavLink
                     to="/news"
                     className={isActive}
                 >News</NavLink>
