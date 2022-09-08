@@ -3,13 +3,13 @@ import React from 'react';
 import classes from './PostForm.module.css';
 import ButtonSend from "../../buttons/ButtonSend/ButtonSend";
 
-function PostForm() {
+function PostForm({addPost}) {
 
     let newPostElement = React.useRef(null);
 
-    let addPost = () => {
+    let addPostClick = () => {
         let text = newPostElement.current.value;
-        alert(text)
+        addPost(text)
     }
 
     return (
@@ -21,7 +21,7 @@ function PostForm() {
             />
             <ButtonSend
                 description={'Send message'}
-                addPost={addPost}
+                addPost={addPostClick}
             />
         </div>
     );

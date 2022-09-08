@@ -4,7 +4,7 @@ import classes from './Posts.module.css';
 import PostForm from "./PostForm/PostForm";
 import Post from "./Post/Post";
 
-function Posts({postsData}) {
+function Posts({postsData, addPost}) {
 
     let postsElements = postsData.map(post => {
         return (
@@ -17,7 +17,7 @@ function Posts({postsData}) {
     return (
         <div className={classes.posts}>
             <div className={classes.posts__form}>
-                <PostForm  />
+                <PostForm  addPost={addPost}/>
             </div>
             <div className={classes.list}>
                 {postsElements}
