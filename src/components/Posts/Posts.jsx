@@ -17,7 +17,7 @@ function Posts({postsData}) {
     return (
         <div className={classes.posts}>
             <div className={classes.posts__form}>
-                <PostForm />
+                <PostForm  />
             </div>
             <div className={classes.list}>
                 {postsElements}
