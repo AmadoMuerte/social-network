@@ -10,6 +10,7 @@ function PostForm({addPost}) {
     let addPostClick = () => {
         let text = newPostElement.current.value;
         addPost(text)
+        newPostElement.current.value = '';
     }
 
     return (
