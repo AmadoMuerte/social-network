@@ -12,7 +12,7 @@ import Music from "../Music/Music";
 import Settings from "../Settings/Settings";
 import Friends from "../Friends/Friends";
 
-function App({state, addPost}) {
+function App({state, addPost, updateNewPostText}) {
 
     let {profilePage, dialogPage, friends} = state
 
@@ -26,7 +26,9 @@ function App({state, addPost}) {
                     path='/profile'
                     element={<ProfileSection
                                 postsData={profilePage.postsData}
+                                newPostText={state.profilePage.newPostText}
                                 addPost={addPost}
+                                updateNewPostText={updateNewPostText}
                             />}
                 />
                 <Route
