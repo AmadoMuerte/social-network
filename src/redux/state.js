@@ -80,30 +80,31 @@ let store = {
         ]
 
     },
+    _callSubscriber() {
+        console.log('state changed')
+    },
 
     getState() {
         return this._state;
     },
-
-    _callSubscriber() {
-        console.log('state changed')
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addPost() {
-        let newPost = {
-            description: this._state.profilePage.newPostText,
-            likesCount: 0,
-            id: this._state.profilePage.postsData.length + 1,
-        }
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer; //observer pattern
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD_POST') {
+            let newPost = {
+                description: this._state.profilePage.newPostText,
+                likesCount: 0,
+                id: this._state.profilePage.postsData.length + 1,
+            }
+            this._state.profilePage.postsData.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE_NEW_POST_TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 }
 

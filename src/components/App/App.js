@@ -12,7 +12,7 @@ import Music from "../Music/Music";
 import Settings from "../Settings/Settings";
 import Friends from "../Friends/Friends";
 
-function App({state, addPost, updateNewPostText}) {
+function App({state, dispatch}) {
 
     let {profilePage, dialogPage, friends} = state
 
@@ -27,8 +27,7 @@ function App({state, addPost, updateNewPostText}) {
                     element={<ProfileSection
                                 postsData={profilePage.postsData}
                                 newPostText={state.profilePage.newPostText}
-                                addPost={addPost}
-                                updateNewPostText={updateNewPostText}
+                                dispatch={dispatch}
                             />}
                 />
                 <Route

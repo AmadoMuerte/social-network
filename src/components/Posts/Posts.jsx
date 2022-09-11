@@ -5,7 +5,7 @@ import PostForm from "./PostForm/PostForm";
 import Post from "./Post/Post";
 
 
-function Posts({postsData, addPost, newPostText, updateNewPostText}) {
+function Posts({postsData, newPostText, dispatch}) {
 
     let postsElements = postsData.map(post => {
         return (
@@ -19,9 +19,8 @@ function Posts({postsData, addPost, newPostText, updateNewPostText}) {
         <div className={classes.posts}>
             <div className={classes.posts__form}>
                 <PostForm
-                    addPost={addPost}
                     newPostText={newPostText}
-                    updateNewPostText={updateNewPostText}
+                    dispatch={dispatch}
                 />
             </div>
             <div className={classes.list}>

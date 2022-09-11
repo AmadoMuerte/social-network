@@ -4,7 +4,7 @@ import Posts from "../Posts/Posts";
 import Profile from "../Profile/Profile";
 
 
-function ProfileSection({postsData, addPost, newPostText, updateNewPostText}) {
+function ProfileSection({postsData,newPostText, dispatch}) {
     return (
         <main>
             <Profile
@@ -14,8 +14,7 @@ function ProfileSection({postsData, addPost, newPostText, updateNewPostText}) {
             <Posts
                 postsData={postsData}
                 newPostText={newPostText}
-                addPost={addPost}
-                updateNewPostText={updateNewPostText}
+                dispatch={dispatch}
             />
         </main>
     );

@@ -4,13 +4,18 @@ import classes from './PostForm.module.css';
 import ButtonSend from "../../buttons/ButtonSend/ButtonSend";
 
 
-function PostForm({addPost, newPostText, updateNewPostText}) {
+function PostForm({dispatch, newPostText}) {
 
     let newPostElement = React.useRef(null);
 
     let onPostChange = (e) => {
         let text = newPostElement.current.value;
-        updateNewPostText(text);
+        let action = {type: 'UPDATE_NEW_POST_TEXT', newText: text}
+        dispatch(action);
+    }
+
+    let addPost = () => {
+        dispatch({type: 'ADD_POST'});
     }
 
     return (
