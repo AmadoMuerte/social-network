@@ -2,6 +2,7 @@ import React from 'react';
 
 import classes from './PostForm.module.css';
 import ButtonSend from "../../buttons/ButtonSend/ButtonSend";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
 
 
 function PostForm({dispatch, newPostText}) {
@@ -10,12 +11,11 @@ function PostForm({dispatch, newPostText}) {
 
     let onPostChange = (e) => {
         let text = newPostElement.current.value;
-        let action = {type: 'UPDATE_NEW_POST_TEXT', newText: text}
-        dispatch(action);
+        dispatch(updateNewPostTextActionCreator(text));
     }
 
     let addPost = () => {
-        dispatch({type: 'ADD_POST'});
+        dispatch(addPostActionCreator());
     }
 
     return (
