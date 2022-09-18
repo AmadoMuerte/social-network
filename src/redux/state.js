@@ -91,6 +91,7 @@ let store = {
 
         ],
     },
+
     _callSubscriber() {
         console.log('state changed')
     },
@@ -135,4 +136,6 @@ export const updateNewMessageBodyCreator = (body) => {
 }
 
 export default store;
+
 window.store = store;
+
