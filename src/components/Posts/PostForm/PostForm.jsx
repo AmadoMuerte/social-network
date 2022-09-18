@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './PostForm.module.css';
 import ButtonSend from "../../buttons/ButtonSend/ButtonSend";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profileReducer";
 
 
 function PostForm({dispatch, newPostText}) {

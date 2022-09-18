@@ -4,7 +4,6 @@ import classes from './Posts.module.css';
 import PostForm from "./PostForm/PostForm";
 import Post from "./Post/Post";
 
-
 function Posts({postsData, newPostText, dispatch}) {
 
     let postsElements = postsData.map(post => {

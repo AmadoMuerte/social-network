@@ -3,7 +3,7 @@ import btnImage from "../../../paper-plane-solid.svg";
 import Message from "./Message/Message";
 
 import classes from './DialogMessage.module.css';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../redux/state';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../redux/dialogsReducer';
 
 function DialogMessage(props) {
 
