@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './Message.module.css';
+//import classes from './Message.module.css';
 
 function Message({message}) {
     return (
