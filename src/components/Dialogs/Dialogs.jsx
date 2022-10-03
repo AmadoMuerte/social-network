@@ -6,17 +6,18 @@ import DialogPerson from "./DialogPerson/DialogPerson";
 import DialogMessage from "./DialogMessage/DialogMessage";
 
 function Dialogs(props) {
-
-    let {dialogsData, messagesData, dispatch} = props
-    let state = props.store.getState().dialogPage;
+        
+    let {dialogsData, messagesData, newMessageBody,
+         onSendMessageClick, onNewMessageChange} = props
 
     return (
         <div className={classes.dialogs}>
             <DialogPerson dialogsData={dialogsData}/>
             <DialogMessage 
-                messageData={messagesData} 
-                dispatch={dispatch} 
-                state={state}
+               messagesData={messagesData}
+               newMessageBody={newMessageBody}
+               onSendMessageClick={onSendMessageClick}
+               onNewMessageChange={onNewMessageChange}
             />
         </div>
     );

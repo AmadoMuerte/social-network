@@ -2,29 +2,24 @@ import React from 'react';
 
 import classes from './PostForm.module.css';
 import ButtonSend from "../../buttons/ButtonSend/ButtonSend";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profileReducer";
 
 
-function PostForm({dispatch, newPostText}) {
+function PostForm({addPost, onPostChange, newPostText}) {
 
     let newPostElement = React.useRef(null);
 
-    let onPostChange = (e) => {
+
+    let PostChange = () => {
         let text = newPostElement.current.value;
-        dispatch(updateNewPostTextActionCreator(text));
+        onPostChange(text);
     }
-
-    let addPost = () => {
-        dispatch(addPostActionCreator());
-    }
-
     return (
         <div>
             <textarea
                 ref={newPostElement}
                 className={classes.PostForm}
                 placeholder={'you news...'}
-                onChange={onPostChange}
+                onChange={PostChange}
                 value={newPostText}
             />
             <ButtonSend

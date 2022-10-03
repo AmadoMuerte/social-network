@@ -4,7 +4,9 @@ import classes from './Posts.module.css';
 import PostForm from "./PostForm/PostForm";
 import Post from "./Post/Post";
 
-function Posts({postsData, newPostText, dispatch}) {
+function Posts(props) {
+
+    let {postsData, newPostText, onPostChange, addPost} = props
 
     let postsElements = postsData.map(post => {
         return (
@@ -19,7 +21,8 @@ function Posts({postsData, newPostText, dispatch}) {
             <div className={classes.posts__form}>
                 <PostForm
                     newPostText={newPostText}
-                    dispatch={dispatch}
+                    onPostChange={onPostChange}
+                    addPost={addPost}
                 />
             </div>
             <div className={classes.list}>

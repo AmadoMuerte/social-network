@@ -3,25 +3,20 @@ import btnImage from "../../../paper-plane-solid.svg";
 import Message from "./Message/Message";
 
 import classes from './DialogMessage.module.css';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../redux/dialogsReducer';
+
 
 function DialogMessage(props) {
 
-    let {messageData, state, dispatch} = props;
+    let {messagesData, newMessageBody, onNewMessageChange, onSendMessageClick} = props;
 
-    let messagesElements = messageData.map(message => {
+    let messagesElements = messagesData.map(message => {
         return <Message  message={message.message} key={message.id}/>
     })
-    let newMessageBody = state.newMessageBody;
 
 
-    let onSendMessageClick = () => {
-        dispatch(sendMessageCreator())
-    }
-
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        dispatch(updateNewMessageBodyCreator(body));
+    let NewMessageChange = (e) => {
+        let text = e.target.value;
+        onNewMessageChange(text);
     }
 
     return (
@@ -40,7 +35,7 @@ function DialogMessage(props) {
                     className={classes.messages__input}
                     type="text" 
                     placeholder={'Type a message'} 
-                    onChange={onNewMessageChange}
+                    onChange={NewMessageChange}
                     value={newMessageBody}
                 />
                 <button className={classes.messages__btn} onClick={onSendMessageClick}>

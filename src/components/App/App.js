@@ -11,10 +11,11 @@ import News from "../News/News";
 import Music from "../Music/Music";
 import Settings from "../Settings/Settings";
 import Friends from "../Friends/Friends";
+import DialogsContainer from '../Dialogs/DialogsContainer';
 
 function App(props) {
 
-    let {state, dispatch, store} = props
+    let {state, store} = props
 
   return (
     <div className='app-wrapper'>
@@ -25,18 +26,14 @@ function App(props) {
                 <Route
                     path='/profile'
                     element={<ProfileSection
-                                postsData={state.profilePage.postsData}
-                                newPostText={state.profilePage.newPostText}
-                                dispatch={dispatch}
+                                store={store}
                             />}
                 /> 
                 <Route
                     path='/dialogs/*'
                     element={
-                        <Dialogs messagesData={state.dialogPage.messagesData}
-                                 dialogsData={state.dialogPage.dialogsData}
-                                 store={store}
-                                 dispatch={dispatch}
+                        <DialogsContainer 
+                            store={store}
                         />
                     }
                 />
