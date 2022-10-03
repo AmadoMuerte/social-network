@@ -6,7 +6,6 @@ import {Route, Routes} from "react-router-dom";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import ProfileSection from "../ProfileSection/ProfileSection";
-import Dialogs from "../Dialogs/Dialogs";
 import News from "../News/News";
 import Music from "../Music/Music";
 import Settings from "../Settings/Settings";
@@ -14,8 +13,6 @@ import Friends from "../Friends/Friends";
 import DialogsContainer from '../Dialogs/DialogsContainer';
 
 function App(props) {
-
-    let {state, store} = props
 
   return (
     <div className='app-wrapper'>
@@ -25,21 +22,15 @@ function App(props) {
             <Routes>
                 <Route
                     path='/profile'
-                    element={<ProfileSection
-                                store={store}
-                            />}
+                    element={<ProfileSection />}
                 /> 
                 <Route
                     path='/dialogs/*'
-                    element={
-                        <DialogsContainer 
-                            store={store}
-                        />
-                    }
+                    element={<DialogsContainer />}
                 />
                 <Route
                     path='/friends'
-                    element={<Friends friends={state.friends}/>}
+                    element={<Friends />}  //friends={state.friends}
                 />
                 <Route
                     path='/news'
