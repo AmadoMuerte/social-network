@@ -5,7 +5,7 @@ let initialState = {
     postsData: [
         {description: 'hello', likesCount: 25, id: 0},
         {description: 'надеюсь сюда кто нибудь заходит...', likesCount: 99, id: 1},
-        {description: 'О, это же моя стена,', likesCount: 999999, id: 2}],
+        {description: 'всем привет', likesCount: 999999, id: 2}],
     newPostText: ''
 }
 
@@ -18,16 +18,18 @@ let initialState = {
                 likesCount: 0,
                 id: state.postsData.length + 1,
             }
-            let stateCopy = {...state};
-            stateCopy.postsData = [...state.postsData];
-            stateCopy.postsData.push(newPost);
-            stateCopy.newPostText = '';
-            return stateCopy;
+
+            return {
+                ...state,
+                postsData: [...state.postsData, newPost],
+                newPostText: ''
+            };
         }
         case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                newPostText: action.newText
+            };
         }
         default:
             return state;

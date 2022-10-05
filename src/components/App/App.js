@@ -30,7 +30,7 @@ function App(props) {
                 />
                 <Route
                     path='/friends'
-                    element={<Friends />}  //friends={state.friends}
+                   // element={<Friends />}  //friends={state.friends}
                 />
                 <Route
                     path='/news'
