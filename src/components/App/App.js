@@ -11,6 +11,8 @@ import Music from "../Music/Music";
 import Settings from "../Settings/Settings";
 import Friends from "../Friends/Friends";
 import DialogsContainer from '../Dialogs/DialogsContainer';
+import UsersContainer from '../Users/UsersContainer';
+
 
 function App(props) {
 
@@ -39,6 +41,10 @@ function App(props) {
                 <Route
                     path='/music'
                     element={<Music/>}
+                />
+                <Route
+                    path='/users'
+                    element={<UsersContainer/>}
                 />
                 <Route
                     path='/settings'

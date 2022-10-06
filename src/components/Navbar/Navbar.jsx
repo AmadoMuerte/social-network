@@ -45,6 +45,12 @@ function Navbar() {
             <br/>
             <li>
                 <NavLink
+                    to="/users"
+                    className={isActive}
+                >Users</NavLink>
+            </li>
+            <li>
+                <NavLink
                     to="/settings"
                     className={isActive}
                 >Settings</NavLink>
