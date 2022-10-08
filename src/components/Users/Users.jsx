@@ -1,56 +1,53 @@
 
+import axios from 'axios';
 import classes from './Users.module.css';
 
-const Users = (props) => {
+import userAvatar from '../../assets/images/avatar.png';
 
-    if (props.users.length === 0) {
-        props.setUsers(
-            [
-                {
-                    fullName: 'Boris', status: 'i am a boss', followed: false, photoUrl: 'https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg',
-                    location: {city:'Minsk', country: 'Belarus'},  likesCount: 25, id: 1
-                },
-                {
-                    fullName: 'Andrey',status: 'i am a boss', followed: true,  photoUrl: 'https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg',
-                    location: {city:'Minsk', country: 'Belarus'},  likesCount: 25, id: 2
-                },
-                {
-                    fullName: 'Kirill', status: 'i am a boss', followed: false, photoUrl: 'https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg',
-                    location: {city:'Minsk', country: 'Belarus'},  likesCount: 25, id: 3
-                }
-            ])
+import React, { Component } from 'react';
+
+class Users extends Component {
+    constructor(props) {
+        super(props);
+
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+            let users = response.data.items;
+            this.props.setUsers(users)
+        })
     }
-    
-    return (
-        <div className={classes.users}>
-            {props.users.map(user => {
+
+    render() {
+        return (
+            <div className={classes.users}>
+            {this.props.users.map(user => {
                 return (
                     <div key={user.id}>
                         <span>
                             <div>
-                                <img src={user.photoUrl} alt="img" />
+                                <img src={user.photos.small !== null ? user.photos.small : userAvatar} alt="img" />
                             </div>
                             <div>
                                 { user.followed ?
-                                    <button onClick={() => {props.follow(user.id)}}>Follow</button> : 
-                                    <button onClick={() => {props.unfollow(user.id)}}>Unfollow</button> }
+                                    <button onClick={() => {this.props.follow(user.id)}}>Follow</button> : 
+                                    <button onClick={() => {this.props.unfollow(user.id)}}>Unfollow</button> }
                             </div>
                         </span>
                         <span>
                             <span>
-                                <div>{user.fullName}</div>
+                                <div>{user.name}</div>
                                 <div>{user.status}</div>
                             </span>
                             <span>
-                                <div>{user.location.country}</div>
-                                <div>{user.location.city}</div>
+                                <div>{/*user.location.country*/}</div>
+                                <div>{/*user.location.city*/}</div>
                             </span>
                         </span>
                     </div>
                 )
             })}
         </div>
-    );
+        );
+    }
 }
 
 export default Users;
