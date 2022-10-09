@@ -47,48 +47,39 @@ class Users extends Component {
 
         return (
             <div className={classes.users}>
-                {this.props.users.map(user => {
-                    return (
-                        <div key={user.id}>
-                            <span>
+                <div className={classes.users__container}>
+                    {this.props.users.map(user => {
+                        return (
+                            <div key={user.id} className={classes.user}>
                                 <div>
                                     <img src={user.photos.small !== null ? user.photos.small : userAvatar} alt="img" />
                                 </div>
                                 <div>
                                     { user.followed ?
-                                        <button onClick={() => {this.props.follow(user.id)}}>Follow</button> : 
-                                        <button onClick={() => {this.props.unfollow(user.id)}}>Unfollow</button> }
+                                    <button onClick={() => {this.props.follow(user.id)}}>Follow</button> : 
+                                    <button onClick={() => {this.props.unfollow(user.id)}}>Unfollow</button> }
                                 </div>
-                            </span>
-                            <span>
-                                <span>
-                                    <div>{user.name}</div>
-                                    <div>{user.status}</div>
-                                </span>
-                                <span>
-                                    <div>{/*user.location.country*/}</div>
-                                    <div>{/*user.location.city*/}</div>
-                                </span>
-                            </span>
-                            
-                        </div>
-                    )
-                })}
+                                <div>{user.name}</div>
+                                <div>{user.status}</div>
+                            </div>
+                        )
+                    })}
+                </div>
                 <div className={classes.pagination}>
                     {slicedPages.map((page) => {
-                        return ( 
-                            <span 
-                                className={this.props.currentPage === page && classes.selectedPage}
-                                onClick={() => this.onPageChanged(page)}
-                                key={page}
-                            >
-                                {page}
-                            </span>
+                    return ( 
+                        <span 
+                            className={this.props.currentPage === page && classes.selectedPage}
+                            onClick={() => this.onPageChanged(page)}
+                            key={page}
+                        >
+                            {page}
+                        </span>
                         )
                     })}
                     
                 </div>
-        </div>
+            </div>
         );
     }
 }
