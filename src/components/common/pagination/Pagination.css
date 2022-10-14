@@ -1,0 +1,25 @@
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgb(239, 239, 239);
+    border-radius: 10px;
+    min-width: 40%;
+}
+
+.pagination span {
+    margin: 5px;
+    cursor: pointer;
+    padding: 4px 5px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.selectedPage {
+    color: rgb(163, 97, 163);
+    font-weight: 700;
+    font-size: 23px;
+}
