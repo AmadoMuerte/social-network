@@ -12,6 +12,7 @@ import Settings from "../Settings/Settings";
 import Friends from "../Friends/Friends";
 import DialogsContainer from '../Dialogs/DialogsContainer';
 import UsersContainer from '../Users/UsersContainer';
+import ProfileSectionContainer from '../ProfileSection/ProfileSectionContainer';
 
 
 function App(props) {
@@ -23,8 +24,8 @@ function App(props) {
         <div className={'app-wrapper__content'}>
             <Routes>
                 <Route
-                    path='/profile'
-                    element={<ProfileSection />}
+                    path='/profile/*'
+                    element={<ProfileSectionContainer />}
                 /> 
                 <Route
                     path='/dialogs/*'
@@ -43,7 +44,7 @@ function App(props) {
                     element={<Music/>}
                 />
                 <Route
-                    path='/users'
+                    path='/users/*'
                     element={<UsersContainer/>}
                 />
                 <Route

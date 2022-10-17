@@ -4,6 +4,7 @@ import classes from './Users.module.css';
 import userAvatar from '../../assets/images/avatar.png';
 import Preloader from '../common/Preloader/Preloader';
 import Pagination from '../common/pagination/Pagination';
+import { NavLink } from 'react-router-dom';
 
 
 const Users = (props) => {
@@ -30,7 +31,9 @@ const Users = (props) => {
                             return (
                                 <div key={user.id} className={classes.user}>
                                     <div>
-                                        <img src={user.photos.small !== null ? user.photos.small : userAvatar} alt="img" />
+                                        <NavLink to={'/profile/' + user.id}>
+                                            <img src={user.photos.small !== null ? user.photos.small : userAvatar} alt="img" />
+                                        </NavLink>
                                     </div>
                                     <div>
                                         { user.followed ?

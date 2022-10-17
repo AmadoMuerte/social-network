@@ -21,7 +21,7 @@ class UsersContainer extends Component {
             let users = response.data.items;
             let totalCount = response.data.totalCount
             this.props.setUsers(users)
-            this.props.setTotalusersCount(totalCount)
+            this.props.setTotalUsersCount(totalCount)
         })
     }
 
